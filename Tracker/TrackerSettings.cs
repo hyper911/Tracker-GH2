@@ -3,6 +3,8 @@ namespace Tracker
     using GameHelper.Plugin;
     using System.Collections.Generic;
     using System.Numerics;
+        using System;
+        using System.IO;
 
     public sealed class TrackerSettings : IPSettings
     {
@@ -18,10 +20,10 @@ namespace Tracker
         public List<StatusEffectSettings> StatusEffects;
         public List<StatusEffectSettings> PlayerStatusEffects;
 
-        public bool AutoSyncGroundEffectsFromFile = false;
-        public string GroundEffectsSourceFile = @"D:\PTrade\GH2\Plugins\Tracker\config\settings.txt";
-        public string ImportSettingsFile = @"D:\PTrade\GH2\Plugins\Tracker\config\tracker_settings_import.txt";
-        public string ExportSettingsFile = @"D:\PTrade\GH2\Plugins\Tracker\config\tracker_settings_export.txt";
+            public bool AutoSyncGroundEffectsFromFile = false;
+            public string GroundEffectsSourceFile;
+            public string ImportSettingsFile;
+            public string ExportSettingsFile;
         public bool IconCoordinatesMigratedTo8Columns = false;
 
         // Player effect settings
@@ -49,6 +51,9 @@ namespace Tracker
 
         public TrackerSettings()
         {
+                GroundEffectsSourceFile = Path.Join(AppContext.BaseDirectory, "Plugins", "Tracker", "config", "settings.txt");
+                ImportSettingsFile = Path.Join(AppContext.BaseDirectory, "Plugins", "Tracker", "config", "tracker_settings_import.txt");
+                ExportSettingsFile = Path.Join(AppContext.BaseDirectory, "Plugins", "Tracker", "config", "tracker_settings_export.txt");
             GroundEffects = [
                 new GroundEffectSettings(true, "Metadata/Effects/Spells/ground_effects/VisibleServerGroundEffect", new Vector4(1.0f, 0.3019608f, 0.0f, 0.6f), 100, 2, false)
             ];

@@ -1,0 +1,40 @@
+﻿# Visual Studio / .NET
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+*.VC.db
+*.VC.VC.opendb
+
+# Rider/IDE
+.idea/
+
+# Visual Studio Code
+.vscode/
+
+# NuGet
+packages/
+*.nupkg
+project.lock.json
+
+# Build output
+*.dll
+*.exe
+*.pdb
+*.cache
+
+# OS files
+Thumbs.db
+.DS_Store
+################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Tracker/.vs
+/Tracker/bin
+/Tracker/obj
+/GameHelper/bin
+/GameHelper/obj
